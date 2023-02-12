@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>New Tab</title>
+		<link rel="stylesheet" href="/css/css.css" />
+	</head>
+
+	<body id="body">
+		<script src="/js/xor.js"></script>
+		<script src="/js/bookmarks.js"></script>
+		<script src="/uv/uv.bundle.js"></script>
+		<script src="/uv/uv.config.js"></script>
+		<!-- <script src="/js/weather.js"></script> -->
+		<script>
+			// const ip = "<?php echo $_SERVER['HTTP_X_FORWARDED_FOR'] ?>";
+		</script>
+		<div class="bookmarks"></div>
+		<div class="info">
+			<div id="weather">
+				<!--   Weather Widget in TOP RIGHT   -->
+				<!-- <h2 id="winfo">Loading...</h2>
+            <h2 id="alerts"></h2> -->
+			</div>
+		</div>
+
+		<div class="center">
+			<h1 id="headtxt">kones Proxy</h1>
+			<forum
+				id="input"
+				onkeydown="if(event.key == 'Enter'){location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`}"
+				onsubmit="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`"
+			>
+				<input id="inputb" placeholder="Search....." />
+				<input
+					id="inputimg"
+					onclick="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`"
+					type="image"
+					value="Login"
+					src="/search.svg"
+					height="24"
+					width="24"
+				/>
+				<input type="submit" style="display: none" />
+				<button onclick="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`" style="margin-top:10px; height: 30px; background-color: rgba(0, 0, 0, 0); color: white; border: solid 1px white; border-radius: 10px; transition: 0.2s all;" id="ultravioletGo">Go</button>
+				<button onclick="location.href='http:\/\/127.0.0.1:8081/service/'+window.parent.searchEngine+document.getElementById('inputb').value" style="margin-top:10px; height: 30px; background-color: rgba(0, 0, 0, 0); color: white; border: solid 1px white; border-radius: 10px; transition: 0.2s all;" id="rhodiumGo">Use Rhodium instead</button>
+			</forum>
+			
+		</div>
+	</body>
+</html>
