@@ -206,7 +206,7 @@
     <script src='js/chrome-tabs.js'></script>
     <script src='internal/manager.js'></script>
     <script src='js/js.js'></script>
-    <div id='konesProxyTOSModal' style="position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.5);">
+    <div id='konesProxyTOSModal' style="position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.5); z-index: 100;">
       <div id="konesProxyTermsOfUseDiv" style="width:700px; height:500px; position: absolute; top: 50vh; left:50vw; transform: translate(-50%, -50%); background-color: rgb(41, 46, 53); border-radius: 5px; border: solid 1px black; padding: 20px;" >
         <h1 style="color: white; text-align: center;">kones Proxy Terms of Use</h1>
         <hr style="color:white;">
@@ -218,7 +218,7 @@
         <br>
         <br>
         <input type="checkbox" style="margin-left: 120px" id="konesProxyTermsOfUseCheckBox">
-        <label style="color:white;" style="text-align: center;">I know how to read and I understand what was said above.</label><br>
+        <label style="color:white;" style="text-align: center;" for="konesProxyTermsOfUseCheckBox">I know how to read and I understand what was said above.</label><br>
         <button type="button" id="konesProxyTermsOfUseButton" style="position: relative; left: 50%; transform: translateX(-50%); margin-top:25px;" >Continue</button>
       </div>
     </div>
