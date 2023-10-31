@@ -44,7 +44,7 @@
 				/>
 				<input type="submit" style="display: none" />
 				<button onclick="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`" style="margin-top:10px; height: 30px; background-color: rgba(0, 0, 0, 0); color: white; border: solid 1px white; border-radius: 10px; transition: 0.2s all;" id="ultravioletGo">Go</button>
-				<button onclick="location.href='http:\/\/127.0.0.1:8081/service/'+window.parent.searchEngine+document.getElementById('inputb').value" style="margin-top:10px; height: 30px; background-color: rgba(0, 0, 0, 0); color: white; border: solid 1px white; border-radius: 10px; transition: 0.2s all;" id="rhodiumGo">Use Rhodium instead</button>
+				<button onclick="(location.href.startsWith('http:\/\/127.0.0.1') ? location.href='http:\/\/127.0.0.1:8081/service/' : location.href = 'rh.'+location.href)+window.parent.searchEngine+document.getElementById('inputb').value" style="margin-top:10px; height: 30px; background-color: rgba(0, 0, 0, 0); color: white; border: solid 1px white; border-radius: 10px; transition: 0.2s all;" id="rhodiumGo">Use Rhodium instead</button>
 			</forum>
 			
 		</div>
