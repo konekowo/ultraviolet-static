@@ -206,6 +206,65 @@
     <script src='js/chrome-tabs.js'></script>
     <script src='internal/manager.js'></script>
     <script src='js/js.js'></script>
+    <div id='konesProxyTOSModal' style="position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.5);">
+      <div id="konesProxyTermsOfUseDiv" style="width:700px; height:500px; position: absolute; top: 50vh; left:50vw; transform: translate(-50%, -50%); background-color: rgb(41, 46, 53); border-radius: 5px; border: solid 1px black; padding: 20px;" >
+        <h1 style="color: white; text-align: center;">kones Proxy Terms of Use</h1>
+        <hr style="color:white;">
+        <p style="color:white; font-size: large; text-align: center;">kone, the owner of this website/service is not responsible for anything you, the user does.</p>
+        <p style="color:white; font-size: large; text-align: center;">You agree that you are only using this for anonymity and not to circumvent any school/work internet filters.</p>
+        <p style="color:white; font-size: large; text-align: center;">You promise that you will only use this service on a home computer or a device that you own and not on a school/work provided device.</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <input type="checkbox" style="margin-left: 120px" id="konesProxyTermsOfUseCheckBox">
+        <label style="color:white;" style="text-align: center;">I know how to read and I understand what was said above.</label><br>
+        <button type="button" id="konesProxyTermsOfUseButton" style="position: relative; left: 50%; transform: translateX(-50%); margin-top:25px;" >Continue</button>
+      </div>
+    </div>
+    <style>
+      #konesProxyTermsOfUseButton{
+        transition: all 0.4s;
+        width: 100px;
+        height: 40px;
+        border: solid 1px white;
+        border-radius: 0px;
+        font-size: large;
+      }
+      #konesProxyTermsOfUseButton:hover{
+        color: black;
+        background-color: white;
+      }
+      #konesProxyTermsOfUseButton:active{
+        background-color: rgb(128, 128, 128);
+      }
+      #konesProxyTermsOfUseButton:disabled{
+        background-color: rgb(66, 66, 66);
+        color: white;
+        cursor: not-allowed;
+      }
+    </style>
+    <script>
+      document.getElementById("konesProxyTermsOfUseButton").disabled = true;
+      if (localStorage.getItem("termsOfUseAccepted") == null) {
+        document.getElementById("konesProxyTermsOfUseButton").addEventListener("click", () => {
+          document.getElementById("konesProxyTOSModal").style.display = "none";
+          localStorage.setItem("termsOfUseAccepted", true);
+        });
+        document.getElementById("konesProxyTermsOfUseCheckBox").addEventListener("click", () => {
+          if (document.getElementById("konesProxyTermsOfUseCheckBox").checked == true){
+            document.getElementById("konesProxyTermsOfUseButton").disabled = false;
+          }
+          else{
+            document.getElementById("konesProxyTermsOfUseButton").disabled = true;
+          }
+        });
+      }
+      else {
+        konesProxyTOSModal.style.display = "none";
+      }
+      
+    </script>
     <!-- <script src='js/extensions.js'></script> -->
     <!-- <script src='js/x/sponsorblock.js'></script>  -->
     <!-- <script src='js/x/DarkMode.js'></script> -->
