@@ -43,10 +43,58 @@
 					width="24"
 				/>
 				<input type="submit" style="display: none" />
-				<button onclick="location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`" style="margin-top:10px; height: 30px; background-color: rgba(0, 0, 0, 0); color: white; border: solid 1px white; border-radius: 10px; transition: 0.2s all;" id="ultravioletGo">Go</button>
-				<button onclick="(location.href.startsWith('http:\/\/127.0.0.1') ? location.href='http:\/\/127.0.0.1:8081/service/' : location.href = 'rh.'+location.href)+window.parent.searchEngine+document.getElementById('inputb').value" style="margin-top:10px; height: 30px; background-color: rgba(0, 0, 0, 0); color: white; border: solid 1px white; border-radius: 10px; transition: 0.2s all;" id="rhodiumGo">Use Rhodium instead</button>
+				<script>
+					function fakeLoad() {
+						document.getElementById("fakeLoad").style.display="block";
+					}
+				</script>
+				<button onclick="fakeLoad(); location.href=`${__uv$config.prefix}${xor.encode(window.parent.searchEngine+document.getElementById('inputb').value)}`" id="ultravioletGo">Go</button>
+				<button onclick="fakeLoad(); (location.href.startsWith('http:\/\/127.0.0.1') || location.href.startsWith('http:\/\/localhost') ? location.href='http:\/\/127.0.0.1:8081/service/' : location.href = 'https:\/\/rh.'+(location.href.substring(8)))+window.parent.searchEngine+document.getElementById('inputb').value" style="" id="rhodiumGo">Use Rhodium instead</button>
+				<style>
+					#ultravioletGo {
+						margin-top:10px;
+						height: 30px;
+						background-color: rgba(0, 0, 0, 0);
+						color: white;
+						border: solid 1px white;
+						border-radius: 10px;
+						transition: 0.2s all;
+					}
+					#ultravioletGo:hover {
+
+						background-color: white;
+						color: black;
+					}
+					#ultravioletGo:active {
+
+						background-color: rgb(177, 177, 177);
+						color: black;
+					}
+					#rhodiumGo {
+						margin-top:10px;
+						height: 30px;
+						background-color: rgba(0, 0, 0, 0);
+						color: white;
+						border: solid 1px white;
+						border-radius: 10px;
+						transition: 0.2s all;
+					}
+					#rhodiumGo:hover {
+						background-color: white;
+						color: black;
+					}
+					#rhodiumGo:active {
+						background-color: rgb(177, 177, 177);
+						color: black;
+					}
+				</style>
+				
 			</forum>
 			
+		</div>
+		<!--for imapatient ppl, so that they dont spam the Go button when the server is just being slow-->
+		<div id="fakeLoad" style="display: none; background-color: white; width: 100vw; height: 100vh; position: absolute; top: 0px; left: 0px;">
+
 		</div>
 	</body>
 </html>
